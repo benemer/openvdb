@@ -182,10 +182,6 @@ elseif(NOT ${OPENVDB_SIMD} IN_LIST _OPENVDB_SIMD_OPTIONS)
   set(OPENVDB_SIMD None CACHE STRING FORCE)
 endif()
 
-if(USE_BLOSC AND NOT USE_ZLIB)
-  message(WARNING "ZLib can only be disabled if Blosc is also disabled. Enabling ZLib.")
-endif()
-
 if(USE_NANOVDB)
   if(OPENVDB_BUILD_CORE AND NOT OPENVDB_BUILD_NANOVDB)
     message(FATAL_ERROR "Invalid CMake build configuration:
